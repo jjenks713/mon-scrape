@@ -6,11 +6,15 @@
   <title>Scraping With Mongoose</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Charmonman|Indie+Flower|Rubik" rel="stylesheet">
 
   <style>
     body {
-      font-family: "Helvetica Neue",Helvetica,Roboto,Arial,sans-serif;
+      font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+      background-image: url("https://www.pixelstalk.net/wp-content/uploads/2017/04/HD-Wallpapers-Basketball-Collection-5.jpg");
+      height: 100%;
     }
+
     #wrapper {
       width: 960px;
       margin-left: auto;
@@ -46,6 +50,11 @@
       height: 200px;
       font-size: 18px;
     }
+
+    .titles {
+      font-family: 'Indie Flower', cursive;
+      color: pink;
+    }
   </style>
 </head>
 
@@ -53,7 +62,7 @@
   <section class="container">
     <div id="wrapper">
       <header>
-        <h1 class="text-center display-1">Today in the NBA!</h1>
+        <h1 class="text-center display-1 text-light">Today in the NBA!</h1>
       </header>
       <br>
       <br>
@@ -62,18 +71,19 @@
         <img class="card-img-top" src="holder.js/100px180/" alt="">
         <div class="card-body">
           <h4 class="card-title">
-            <h2><i>Click an article to right a note about it</i></h2>
-          </h4>
+            <h2><i>Click an article to Write a note about it</i></h2>
+          </h4><br><br>
           <p class="card-text">
-            <div id="articles">
-              <ul>
+            <div class="row">
+              <div id="articles" class="col-6">
+                <ul>
 
-              </ul>
-            </div>
-            <div id="notes"></div>
+                </ul>
+              </div>
+              <div id="notes" class="col-6">
+                <form></form>
+              </div>
           </p>
-
-
         </div>
       </div>
     </div>
