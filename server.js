@@ -34,7 +34,7 @@ mongoose.connect("mongodb://localhost/mon-scraper-2", { useNewUrlParser: true })
 // A GET route for scraping the echoJS website
 app.get("/scrape", function(req, res) {
   // First, we grab the body of the html with axios
-  axios.get("http://www.nba.com/").then(function(response) {
+  axios.get("http://www.nba.com").then(function(response) {
     // Then, we load that into cheerio and save it to $ for a shorthand selector
     var $ = cheerio.load(response.data);
   // console.log(response.data);
@@ -63,9 +63,7 @@ app.get("/scrape", function(req, res) {
           console.log(err);
         });
     });
-
-    // Send a message to the client
-    res.send("Scrape Complete");
+    window.location.href("/")
   });
 });
 
