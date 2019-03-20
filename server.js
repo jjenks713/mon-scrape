@@ -31,13 +31,13 @@ app.use(express.static("public"));
 // Connect to the Mongo DB
 
 
-var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/mongoHeadlines";
-mongoose.connect(MONGODB_URI);
-// if (MONGODB_URI) {
-//   mongoose.connect(MONGODB_URI);
-// } else {
-//   mongoose.connect("mongodb://localhost/mon-scraper-2", { useNewUrlParser: true });
-// }
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://<chillen713>:<W8aNWNaiaqY9f6t>@ds259154.mlab.com:59154/heroku_kbtp80t4";
+// mongoose.connect(MONGODB_URI);
+if (MONGODB_URI) {
+  mongoose.connect(MONGODB_URI);
+} else {
+  mongoose.connect("mongodb://localhost/mon-scraper-2", { useNewUrlParser: true });
+}
 
 // Routes
 
