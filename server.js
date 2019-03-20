@@ -32,11 +32,12 @@ app.use(express.static("public"));
 
 
 var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/mongoHeadlines";
-if (MONGODB_URI) {
-  mongoose.connect(MONGODB_URI);
-} else {
-  mongoose.connect("mongodb://localhost/mon-scraper-2", { useNewUrlParser: true });
-}
+mongoose.connect(MONGODB_URI);
+// if (MONGODB_URI) {
+//   mongoose.connect(MONGODB_URI);
+// } else {
+//   mongoose.connect("mongodb://localhost/mon-scraper-2", { useNewUrlParser: true });
+// }
 
 // Routes
 
