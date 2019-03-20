@@ -34,7 +34,7 @@ app.use(express.static("public"));
 var MONGODB_URI = process.env.MONGODB_URI;
 // mongoose.connect(MONGODB_URI);
 if (MONGODB_URI) {
-  mongoose.connect(MONGODB_URI);
+  mongoose.connect(MONGODB_URI, { useNewUrlParser: true });
 } else {
   mongoose.connect("mongodb://localhost/mon-scraper-2", { useNewUrlParser: true });
 }
