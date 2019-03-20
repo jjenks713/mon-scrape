@@ -73,7 +73,7 @@ app.get("/scrape", function (req, res) {
           console.log(err);
         });
     });
-    // window.location.href("public/index.html");
+    // window.location.href("/");
   });
 });
 
