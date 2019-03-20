@@ -1,20 +1,28 @@
-$("#scrape-button").on("click", function(){
+$("#scrape-button").on("click", function () {
     // alert("Scraped");
 
-    $.get("/scrape", function(err, res){
+    $.get("/scrape", function (err, res) {
         console.log(res);
         // window.location.reload();
     });
+    displayArticles();
 });
 
-// Grab the articles as a json
-$.getJSON("/articles", function (data) {
-    // For each one
-    for (var i = 0; i < data.length; i++) {
-        // Display the apropos information on the page
-        $("#articles").prepend("<p data-id='" + data[i]._id + "'>" + data[i].title + "<br />" + "<a href=" + data[i].link + "></a>" + data[i].link + "</p><br>");
-    };
+$(document).ready( function () {
+    displayArticles();
 });
+
+function displayArticles() {
+    // Grab the articles as a json
+    $.getJSON("/articles", function (data) {
+        // For each one
+        for (var i = 0; i < data.length; i++) {
+            // Display the apropos information on the page
+            $("#articles").prepend("<p data-id='" + data[i]._id + "'>" + data[i].title + "<br />" + "<a href=" + data[i].link + "></a>" + data[i].link + "</p><br>");
+        };
+    });
+}
+
 
 
 // Whenever someone clicks a p tag
